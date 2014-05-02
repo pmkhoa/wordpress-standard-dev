@@ -1,0 +1,38 @@
+/*!
+Theme Name: WordPress Starter Theme
+Theme URI: http://www.THEME.com
+Author: Khoa PHam
+Author URI: http://khoapham.me
+Description: WordPress Starter Theme for use as a starting template for building custom themes.
+Version: 1.0
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+// Reset, Variables, Mixins, Etc
+// DO NOT EDIT ORDER OF FILES
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/bourbon/bourbon";
+@import "partials/neat/neat";
+
+// Globals
+@import "partials/h5bp-global";
+@import "partials/general";
+
+// Layout
+@import "partials/layout";
+@import "partials/header";
+@import "partials/footer";
+
+// Menus, Page and Post styles
+@import "partials/menus";
+@import "partials/page-post";
+
+// Page Templates
+@import "partials/page-home";
+@import "partials/page-blog";
+
+// Helper Classes, Print, Etc
+@import "partials/helpers";
+@import "partials/print";

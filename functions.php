@@ -43,7 +43,3 @@ function mb_filter_yoast_seo_metabox() {
 /****************************************
 Advanced Custom Fields Functions
 *****************************************/
-
-function get_site_logo() {
-  return get_field("logo", "option");
-}

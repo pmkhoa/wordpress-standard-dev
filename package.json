@@ -1,21 +1,18 @@
 {
   "author": "Khoa Pham",
-  "name": "KhoaPham.me",
-  "version": "0.0.1",
+  "name": "wordpress-standard-dev-theme",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-compass": "~0.2.0",
-    "grunt-contrib-imagemin": "~0.1.4",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.4.4",
-    "grunt-rsync": "~0.1.1",
-    "matchdep": "~0.1.2",
-    "grunt-uncss": "~0.1.5",
-    "grunt-imageoptim": "~1.4.1"
-  },
-  "engines": {
-    "node": ">=0.8.0"
+    "grunt": "~0.4.4",
+    "grunt-autoprefixer": "~0.7.2",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-imagemin": "~0.6.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-rsync": "~0.5.0",
+    "load-grunt-tasks": "~0.4.0"
   }
 }
