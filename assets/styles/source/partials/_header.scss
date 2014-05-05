@@ -2,11 +2,62 @@
    Header
    ========================================================================== */
 
-.site-header {
+.home .header {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  #menu-main-navigation {
+    li {
+      a {
+        color: white;
+      }
+    }
+  }
 }
 
-.site-description {
+.header {
+  position: relative;
+  top: 0;
+  @include bp-medium {
+    #inner-header {
+      display: block;
+      position: relative;
+      padding: 25px 0;
+      @include outer-container;
+    }
+    nav {
+      @include span-columns(10);
+      @include omega();
+    }
+    #logo {
+      img {max-width: 100px;}
+      @include span-columns(2);
+    }
+    #menu-main-navigation {
+      margin: 20px 0px;
+      line-height: 1em;
+      text-align: right;
+      li {
+        display: inline-block;
+        padding: 10px 12px;
+
+        &:first-child {
+          margin-left: 5px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          color: $black;
+          font-size: 1em;
+          text-transform: uppercase;
+          font-weight: 600;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
 }
 
-.site-title {
-}

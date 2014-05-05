@@ -12,9 +12,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // Reset, Variables, Mixins, Etc
 // DO NOT EDIT ORDER OF FILES
 @import "partials/variables";
-@import "partials/normalize";
 @import "partials/bourbon/bourbon";
 @import "partials/neat/neat";
+
+@import "partials/normalize";
+@import "partials/mixins";
 
 // Globals
 @import "partials/h5bp-global";
@@ -31,6 +33,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 // Page Templates
 @import "partials/page-home";
+@import "partials/slider";
 @import "partials/page-blog";
 
 // Helper Classes, Print, Etc

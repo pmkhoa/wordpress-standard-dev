@@ -2,15 +2,20 @@
    Variables
    ========================================================================== */
 
-// Font Face
-// @include fontface('FONT_NAME', 'assets/fonts/', 'FONT_FAMILY');
-
 // Structure
-$pageWidth: 1000px;
+$pageWidth: 60em;
+$max-width: 60em;
+// Color
+
+$darkGray: #4d4d4d;
+$gray: #c9c9c9;
+$lightGray: #b7b3b3;
+$black : #302924;
+
 
 // Text Selection
-$selectionColor: orange;
+$selectionColor: #ffd400;
 
-// Colors
-$red: red;
-$blue: blue;
+// Links
+$linkColor: $black;
+$linkHoverColor: darken($linkColor, 5%);

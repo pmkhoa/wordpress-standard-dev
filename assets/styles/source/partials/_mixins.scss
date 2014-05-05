@@ -1,0 +1,123 @@
+/*
+Set a rem font size with pixel fallback
+@include font-size(14px)
+*/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/*
+Breakpoints:
+  .sidebar {
+    width: 60%
+    float: left;
+    margin: 0 2% 0 0;
+    @include bp-small {
+      width: 100%;
+      float: none;
+      margin: 0;
+    }
+  }
+*/
+// 1120px
+@mixin bp-xlarge {
+  @media only screen and (min-width: 70em) {
+    @content;
+  }
+}
+
+
+// 960px
+@mixin bp-large {
+  @media only screen and (min-width: 60em) {
+    @content;
+  }
+}
+
+// 640px
+@mixin bp-medium {
+  @media only screen and (min-width: 40em) {
+    @content;
+  }
+}
+
+//480px @font-size 16px
+@mixin bp-small {
+  @media only screen and (min-width: 30em) {
+    @content;
+  }
+}
+
+/*
+SVG background images with PNG and retina fallback
+body {
+  @include background-image('pattern');
+}
+*/
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+@mixin background-image($name, $size:false){
+    background-image: url(#{$image-path}/#{$name}.svg);
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+          background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+/*
+  Cross browser opacity
+  @include opacity(0.8);
+*/
+@mixin opacity($opacity) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})";
+  filter: alpha(opacity=$opacity);
+  -moz-opacity: $opacity / 100;
+  -khtml-opacity: $opacity / 100;
+  opacity: $opacity / 100;
+
+}
+
+/*
+  Cross browser transparent background
+  @include transparent-background(#000000, 0.2);
+*/
+
+@mixin transparent-background($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
+
+/*
+Visually hide an element
+.visually-hidden {
+  @extend %visuallyhidden;
+}
+*/
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}

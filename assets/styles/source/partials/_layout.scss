@@ -2,28 +2,16 @@
    Layout
    ========================================================================== */
 
-#page {
-	max-width: $pageWidth;
-	margin: 20px auto;
-}
+ .wrap {
+   width: 96%;
+   margin: 0 auto;
+ }
+ @media only screen and (min-width: 768px) {
+   .wrap {
+      @include outer-container;
+   }
+ }
 
-.content-area {
-	float: left;
-	margin: 0 -25% 0 0;
-	width: 100%;
-}
-
-.site-main {
-	margin: 0 25% 0 0;
-}
-
-.site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: 25%;
-}
-
-.site-footer {
-	clear: both;
-	width: 100%;
-}
+ .unstyled {
+   list-style: none;
+ }

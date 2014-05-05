@@ -10,25 +10,21 @@
 	box-sizing: border-box;
 }
 
-
-/* ==========================================================================
-   General
-   ========================================================================== */
-
-body { }
-
-
 /* ==========================================================================
    Links
    ========================================================================== */
+   a,
+   a:visited {
+     color: $linkColor;
+   }
+   a:hover {
+     color: $linkHoverColor;
+   }
 
-a,
-a:visited {
-	color: $red;
-}
-a:hover {
-	color: $blue;
-}
+   a {
+     text-decoration: none;
+     outline: none;
+   }
 
 
 /* ==========================================================================
@@ -40,31 +36,96 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+/* ==========================================================================
+   Padding / Margin
+   ========================================================================== */
+.padding-vertical {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.big-padding-top {
+  padding-top: 40px;
+}
+.big-padding-bottomm {
+  padding-bottom: 40px;
+}
+.text-center {
+  text-align: center;
+}
 
 /* ==========================================================================
    Typography
    ========================================================================== */
 
-h1 { }
-h2 { }
-h3 { }
-h4 { }
+// Font Face
+// @include fontface('FONT_NAME', 'assets/fonts/', 'FONT_FAMILY');
+
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
+
+//Typography
+@include font-face('Bradon Grotesque', 'assets/fonts/Brandon_light', 300, normal);
+@include font-face('Bradon Grotesque', 'assets/fonts/Brandon_med', 400, normal );
+@include font-face('Bradon Grotesque', 'assets/fonts/Brandon_bld', 600, normal);
+@include font-face('Bradon Grotesque', 'assets/fonts/Brandon_blk', 700, normal);
+$sans-serif : 'Bradon Grotesque', 'Muli', sans-serif;
+
+h1 {
+ font-size: 2.8em;
+ line-height: 1.333em;
+}
+h2 {
+ font-size: 2.0em;
+ line-height: 1.4em;
+}
+
+h4.widgettitle { }
+
+h3 {
+ font-size: 1.5em;
+}
+h4 {
+ font-size: 1.5em;
+ line-height: 1.4em;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+  font-weight: 400;
+  margin: 0.5em 0;
 }
 
-p {
-	margin-bottom: 1.5em;
+@include bp-medium {
+  h1 {
+    font-size: 3.25em;
+    line-height: 1.333em;
+  }
+  h2 {
+    font-size: 2.4em;
+    line-height: 1.4em;
+  }
+
+  h3 {
+    font-size: 2.0em;
+    line-height: 1.4em;
+  }
 }
 
-blockquote {
-	margin: 0 1.5em;
-}
 
-address {
-	margin: 0 0 1.5em;
-}
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+   body {
+    font-family: $sans-serif;
+    font-size: 90%;
+    line-height: 1.8;
+    font-weight: 400;
+    position: relative;
+    color: $black;
+    @include bp-medium {
+      font-size: 100%;
+    }
+   }
 
 
 /* ==========================================================================
