@@ -18,7 +18,7 @@ module.exports = function(grunt) {
             },
             livereload: {
                 options: { livereload: true },
-                files: ['style.css', 'assets/js/*.js', '*.html', '*.php', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                files: ['style.css', 'assets/js/*.js', '*.html', '**/*.php', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
 
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'assets/styles/build',
                 src: ['*.css', '!*.min.css'],
-                ext: '.min.css'
+                ext: '.css'
             }
         },
 
@@ -85,8 +85,10 @@ module.exports = function(grunt) {
                 files: {
                     'assets/js/plugins.min.js': [
                         'assets/js/source/plugins.js',
-                        'assets/js/vendor/navigation.js',
-                        'assets/js/vendor/skip-link-focus-fix.js',
+                        'assets/js/vendor/bower_components/jquery-touchswipe/jquery.touchSwipe.js',
+                        'assets/js/vendor/bower_components/JQuery-EasyTabs/vendor/jquery.hashchange.min.js',
+                        'assets/js/vendor/bower_components/JQuery-EasyTabs/lib/jquery.easytabs.min.js',
+                        'assets/js/vendor/bower_components/gsap/src/minified/TweenMax.min.js',
                     ]
                 }
             },
